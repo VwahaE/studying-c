@@ -1,9 +1,9 @@
-/* Џ®¤Є«оз Ґ¬ ЎЁЎ«Ё®вҐЄг ¤«п ўў®¤ /ўлў®¤  */
+/* РџРѕРґРєР»СЋС‡Р°РµРј Р±РёР±Р»РёРѕС‚РµРєСѓ РґР»СЏ РІРІРѕРґР°/РІС‹РІРѕРґР° */
 #include <iostream>
 
-// ”г­ЄжЁп ЇаҐ®Ўа §®ў ­Ёп вЁЇ®ў C-style cast
+// Р¤СѓРЅРєС†РёСЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ С‚РёРїРѕРІ C-style cast
 void printCstyle(int x, float y, double z, unsigned short k){
-    std::cout <<"\tџў­®Ґ ЇаҐ®Ўа §®ў ­ЁҐ\tC-style cast:\n\n";
+    std::cout <<"\tРЇРІРЅРѕРµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ\tC-style cast:\n\n";
     int i = (int)(x+y)*z+k;
     std::cout <<"\tint i = (int)(x+y)*z+k = " << i << "\n";
     k = (unsigned short)x-y/z;
@@ -17,9 +17,9 @@ void printCstyle(int x, float y, double z, unsigned short k){
 
 }
 
-// ”г­ЄжЁп ЇаҐ®Ўа §®ў ­Ёп вЁЇ®ў static_cast
+// Р¤СѓРЅРєС†РёСЏ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ С‚РёРїРѕРІ static_cast
 void printStaticCast(int x, float y, double z, unsigned short k){
-    std::cout <<"\tџў­®Ґ ЇаҐ®Ўа §®ў ­ЁҐ\tstatic_cast:\n\n";
+    std::cout <<"\tРЇРІРЅРѕРµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ\tstatic_cast:\n\n";
     int i = static_cast<int>((x+y)*z+k);
     std::cout <<"\tint i = static_cast<int>((x+y)*z+k) = " << i << "\n";
     k = static_cast<int>(x-y/z);

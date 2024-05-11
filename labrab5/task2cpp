@@ -1,0 +1,48 @@
+#include "head_lb5.h"
+
+int getAnimalName(Animal type){
+    int result;
+    switch (type){
+    case pig:
+        result = 1;
+        break;
+    case chicken:
+        result = 2;
+        break;
+    case goat:
+        result = 1;
+        break;
+    case cat:
+        result = 1;
+        break;
+    case dog:
+        result = 1;
+        break;
+    default:
+        // Если ничего Не совпало
+        result = 0;
+        break;
+    }
+    return result;
+}
+void printNumberOfLegs(int type){
+    switch (type){
+    case 1:
+        std::cout << "\tмлекопитающее 4 лапы\n";
+        break;
+    case 2:
+        std::cout << "\tптица 2 лапы\n";
+        break;
+    default:
+        std::cout << "\tНе опознано\n"; // Если ничего Не совпало
+        break;
+    }
+}
+
+void outputTask2(){
+    outputTab();
+    printNumberOfLegs(getAnimalName(pig));
+    printNumberOfLegs(getAnimalName(chicken));
+    printNumberOfLegs(getAnimalName(fish));
+    funcDesigner();
+}

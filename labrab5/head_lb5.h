@@ -1,6 +1,7 @@
 // Начало header guard.
 #ifndef HEAD_LB5_H
 #define HEAD_LB5_H
+
 /* Заголовочный файл для работы с функциями операционной системы Windows */
 #include <Windows.h>
 
@@ -40,7 +41,6 @@ enum Level{
 };
 
 /* используем перечислитель для определения животных */
-
 enum Animal{
     pig,
     chicken,
@@ -64,4 +64,6 @@ void outputTask2();
 // Прототип функции вывода задания 3
 void outputTaskThree();
 
+// Прототип функции вывода задания 4
+void outputTaskFour();
 #endif // HEAD_LB5_H

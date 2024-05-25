@@ -69,5 +69,6 @@ void outputTaskFour();
 
 // Прототип функции вывода задания 7
 void outputTaskSeven();
-
+// Прототип функции вывода задания 8
+void outputTaskEight();
 #endif // HEAD_LB5_H

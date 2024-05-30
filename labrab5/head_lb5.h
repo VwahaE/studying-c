@@ -66,7 +66,8 @@ void outputTaskThree();
 
 // Прототип функции вывода задания 4
 void outputTaskFour();
-
+// Прототип функции вывода задания 6
+void outpuSix();
 // Прототип функции вывода задания 7
 void outputTaskSeven();
 // Прототип функции вывода задания 8

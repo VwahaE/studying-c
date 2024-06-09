@@ -4,6 +4,7 @@
 #include <algorithm> // std::transform
 #include <random>
 #include <ctime>
+#include<iterator>
 
 // прямой порядок вывода контейнера типа vector
 void printRevers(std::vector<int>& stack,
@@ -78,7 +79,16 @@ void vecMix(std::vector<int> &v, std::list<int> &l){
     std::for_each(mixVec.begin(), mixVec.end(), print);
     std::cout <<"\n";
 }
-
+// Вывод с помощью потокового итератора
+void printList(const std::list<double>& list1) {
+    std::copy(list1.begin(), list1.end(), std::ostream_iterator<double>(std::cout, " "));
+    puts("");
+}
+// функция расчета и добавления сренде арифметич. всех элементов
+void arithmAverages(std::list<double>& list1) {
+    auto avg = accumulate(list1.begin(), list1.end(), 0.0) / list1.size();
+    list1.push_back(avg);
+}
 int main() {
     int task(1);
     /******************************* Задание 2 ***************************************/
@@ -181,6 +191,19 @@ int main() {
     }
 
     vecMix(myVector1, myList);
+    std::cout << "\n\n";
+    /******************************* Задание 5 ***************************************/
+    std::cout << "\tЗадание "<< ++task <<"\n\n";
+
+    std::list<double> list1{ 1.02, 33.25, 5.56, 7.62 };
+    std::cout<< "\n\tЗаданный список (list1): \n";
+    std::cout<<"\t";
+    printList(list1);
+    arithmAverages(list1);
+    std::cout<< "\n\tСписок (list1) со среднем арифметическим всех его элементов.: \n";
+    std::cout<<"\t";
+    printList(list1);
+    std::cout << "\n\n";
 
     return 0;
 }

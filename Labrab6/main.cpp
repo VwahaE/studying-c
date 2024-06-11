@@ -1,4 +1,5 @@
 #include <iostream>
+#include <map>       // std::map
 #include <vector>    // std::vector
 #include <list>      // std::list
 #include <algorithm> // std::transform
@@ -88,6 +89,38 @@ void printList(const std::list<double>& list1) {
 void arithmAverages(std::list<double>& list1) {
     auto avg = accumulate(list1.begin(), list1.end(), 0.0) / list1.size();
     list1.push_back(avg);
+}
+// функция вывода задания №6
+void outTask6(){
+    std::map <int,std::string> myFirstMap;
+    int exitOrNot = 1;
+    // условие выхода из цикла
+    while (exitOrNot == 1 ) {
+        std::cout<<"Пожалуйста, введите рейтинг: ";
+        int rating(0);
+        std::cin >> rating;
+        std::cout<<"Пожалуйста, введите название автомобиля: ";
+        std::string word;
+        std::cin >> word;
+        myFirstMap.insert ( std::pair<int,std::string>(rating, word) );
+        std::cout << "\tЗакочить ввод - нажмите 0, продолжить - нажмите 1:";
+
+        do{
+            std::cin >> exitOrNot;
+        } while (exitOrNot != 0 && exitOrNot != 1);
+        std::cout <<'\n';
+    }
+
+    std::cout << "Топ-3 Ваших любимых автомобилей:\n";
+    int top(0);
+
+    for (auto it = myFirstMap.begin(); it != myFirstMap.end(); ++it)///вывод на экран
+    {
+        if(top< 3){
+            std::cout << it->first << " : " << it->second << std::endl;
+        }
+        top++;
+    }
 }
 int main() {
     int task(1);
@@ -204,6 +237,10 @@ int main() {
     std::cout<<"\t";
     printList(list1);
     std::cout << "\n\n";
-
+    /******************************* Задание 5 ***************************************/
+    std::cout << "\tЗадание "<< ++task <<"\n\n";
+    std::cout<<"Данная программа собирает топ-3 Ваших любимых автомобилей.\n";
+    outTask6();
+    std::cout << "\n\n";
     return 0;
 }
